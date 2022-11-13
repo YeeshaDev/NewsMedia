@@ -28,7 +28,7 @@ function World() {
                              <div key={item.url} className="col-sm-6 mb-5 mb-sm-2">
 						<div className="position-relative image-hover">
 							<img
-							 src={item.multimedia[0].url ?
+							 src={item?.multimedia?.[0]?.url ?
                                 `https://nytimes.com/${item.multimedia[0].url}` : 
                                 'https://upload.wikimedia.org/wikipedia/commons/4/40/New_York_Times_logo_variation.jpg'
                             } 
