@@ -28,17 +28,3 @@
 		transform: translateX(0%);
 	}
 }
-
-.mystyle {
-	position:relative;
-		 color: white; 
-		 cursor: pointer;
-		 display:block;
-		 bottom:210,; 
-		 height:50;
-		 width:55;
-		 right:-460;
-}
-
-
-  
