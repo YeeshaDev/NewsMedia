@@ -1,0 +1,44 @@
+.itemContainer {
+	overflow: hidden;
+}
+.carouselImage {
+	width: 100%;
+}
+.carouselImage img {
+	width: 100%;
+}
+.carouselImageAnimation {
+	animation: carousel 5.05s linear infinite;
+}
+.row {
+	justify-content: center;
+}
+.colLgEight {
+	flex: 1;
+	max-width: 100%;
+}
+@keyframes carousel {
+	0% {
+		transform: translateX(100%);
+	}
+	15% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+.mystyle {
+	position:relative;
+		 color: white; 
+		 cursor: pointer;
+		 display:block;
+		 bottom:210,; 
+		 height:50;
+		 width:55;
+		 right:-460;
+}
+
+
+  
