@@ -123,11 +123,11 @@ const Navbar = () => {
 								</li>
 								<li className="nav-item">
 									<Link href="/author">
-										<a className="nav-link">Authorit </a>
+										<a className="nav-link">Authority </a>
 									</Link>
 								</li>
 								<li className="nav-item">
-									<Link href="#">
+									<Link href="/search">
 										<a className="nav-link">
 											<i className="mdi mdi-magnify"></i>
 										</a>

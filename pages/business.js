@@ -1,5 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
-const business = () => {
+export const getStaticProps = async () => {
+    const res = await fetch('https://newsapi.org/v2/top-headlines?category=business&language=en&apiKey=316a577c19404b0da26da52720868967')
+    const data = await res.json();
+    console.log(data)
+
+	
+    return {
+        props:{business:data.articles}
+    }
+}
+const business = ({business}) => {
+	const truncate = (input) =>
+      input?.length > 50 ? `${input.substring(0, 50)}...` : input;
 	return (
 		<div className="container">
 			<div className="row">
@@ -15,10 +27,38 @@ const business = () => {
 				</div>
 			</div>
 			<div className="row">
-				<div className="col-lg-6  mb-5 mb-sm-2">
+				{business.slice(0,6).map((item) => {
+					return (
+						<div className="col-lg-6  mb-5 mb-sm-2">
+					<div className="position-relative image-hover">
+						<a href={item.url}>
+						<img
+							src={item.urlToImage || "../assets/images/business/Business_1.jpg"}
+							className="img-fluid"
+							alt="world-news w-100"
+							style={{height:300 + 'px',objectFit:'cover'}}
+						/>
+						<span className="thumb-title">BUSINESS</span>
+						</a>
+					</div>
+					<a href={item.url} className='text-dark'>
+					<h1 className="font-weight-600 mt-3 fs-15">
+						{item.title}
+					</h1>
+					<p className="fs-15 font-weight-normal">
+					{item.description}
+					</p>
+					</a>
+					<a href={item.url} style={{color:' #484545'}}>
+					<h2 className="font-weight-600 mt-3 fs-15 p-2" style={{borderLeft:'3px solid red', height:7 + 'px', display:'flex', alignItems:'center'}}>{item.source.name}</h2>
+					</a>
+				</div>
+					)
+				})}
+				{/*<div className="col-lg-6  mb-5 mb-sm-2">
 					<div className="position-relative image-hover">
 						<img
-							src="../assets/images/business/Business_1.jpg"
+							src={"../assets/images/business/Business_1.jpg"}
 							className="img-fluid"
 							alt="world-news"
 						/>
@@ -101,7 +141,7 @@ const business = () => {
 							</p>
 						</div>
 					</div>
-				</div>
+			</div>*/}
 			</div>
 			<div className="row mt-5">
 				<div className="col-sm-12">
@@ -109,7 +149,30 @@ const business = () => {
 				</div>
 			</div>
 			<div className="row mb-4">
-				<div className="col-sm-3  mb-5 mb-sm-2">
+				{business.map((item) => {
+					return (
+						<div className="col-sm-4 col-lg-3 mb-5 mb-sm-2">
+					<div className="position-relative image-hover">
+					<a href={item.url} className='text-dark'>
+						<img
+							src={item.urlToImage || "../assets/images/business/Business_6.jpg"}
+							className="img-fluid w-100"
+							alt="world-news"
+							style={{height:150 + 'px',objectFit:'cover'}}
+						/>
+						<span className="thumb-title">BUSINESS</span>
+						</a>
+					</div>
+					<a href={item.url} className='text-dark'>
+					<h5 className="font-weight-600 mt-3 fs-15">
+						{truncate(item.title)}
+					</h5>
+					</a>
+					<h2 className="font-weight-600 mt-3 fs-15 p-2" style={{borderLeft:'3px solid #e6e618', height:7 + 'px', display:'flex', alignItems:'center'}}>{item.source.name}</h2>
+				</div>
+					)
+				})}
+				{/*<div className="col-sm-3  mb-5 mb-sm-2">
 					<div className="position-relative image-hover">
 						<img
 							src="../assets/images/business/Business_6.jpg"
@@ -322,7 +385,7 @@ const business = () => {
 					<h5 className="font-weight-600 mt-3">
 						From Pakistan to the Caribbean: Curry&apos;s journey
 					</h5>
-				</div>
+			</div>*/}
 			</div>
 			{/* <!-- container-scroller ends -->
         <!-- partial:../partials/_footer.html --> */}

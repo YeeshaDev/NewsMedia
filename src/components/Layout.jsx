@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import Footer from './Footer';
 import Navbar from './Navbar';
+import Slider from '../../pages/test';
+
+
 
 const Layout = ({ children }) => {
 	useEffect(() => {
@@ -18,6 +21,7 @@ const Layout = ({ children }) => {
 	}
 	return (
 		<>
+		
 			<div className="container-scroller" onScroll={scrollHeader}>
 				<div className="main-panel">
 					<Navbar />
@@ -25,6 +29,7 @@ const Layout = ({ children }) => {
 					<Footer />
 				</div>
 			</div>
+			
 		</>
 	);
 };

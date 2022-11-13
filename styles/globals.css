@@ -8,6 +8,8 @@ body {
 	font-size: 3rem;
 	text-transform: capitalize;
 	min-height: 50vh;
+	
+	
 }
 .logoContainer {
 	max-width: 50%;
@@ -15,3 +17,75 @@ body {
 .hamburgerActive {
 	right: 0 !important;
 }
+.carousel .control-dots .dot {
+	border-radius: 0% !important;
+	width: 20px !important;
+	height: 2px !important;
+  }
+.sport-img {
+	height: 10px;
+}
+
+form{
+   position: relative;
+	background-color: #353536;
+	width: 83%;
+	height: 90px;
+	margin: auto;
+	padding: 0.1rem;
+}
+.search-bar {
+	position: relative;
+	display: flex;
+	width: 370px;
+	height: 50px;
+	margin:1rem auto;
+	border:1px solid rgb(119, 116, 116);
+	outline-color:#fff;
+}
+
+form i{
+	position: absolute;
+	top: 30%;
+	left: 65%;
+	font-size: 2rem;
+}
+.spinner-3 {
+	width: 50px;
+	padding: 8px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	margin:auto;
+	background: #1f2020;
+	--_m: 
+	  conic-gradient(#0000 10%,#000),
+	  linear-gradient(#000 0 0) content-box;
+	-webkit-mask: var(--_m);
+			mask: var(--_m);
+	-webkit-mask-composite: source-out;
+			mask-composite: subtract;
+	animation: s3 1s infinite linear;
+  }
+  @keyframes s3 {to{transform: rotate(1turn)}}
+  
+  @media screen and (max-width:750px) {
+	.sport-img {
+		height: 100px;
+	}
+	.search-bar {
+		position: relative;
+		display: flex;
+		width: 80%;
+		height: 50px;
+		margin:1rem auto;
+		border:1px solid rgb(119, 116, 116);
+		outline-color:#fff;
+	}
+	form i{
+		position: absolute;
+		top: 30%;
+		left: 78%;
+		font-size: 2rem;
+	
+	}
+  }

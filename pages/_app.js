@@ -8,13 +8,18 @@ import '../styles/globals.css';
 import Layout from '../src/components/Layout';
 import Meta from '../src/components/Meta';
 
+
+
 function MyApp({ Component, pageProps }) {
+	
 	return (
 		<>
 			<Meta />
+			
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
+			
 		</>
 	);
 }
