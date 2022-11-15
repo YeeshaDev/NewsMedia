@@ -106,7 +106,7 @@ export default function Home({blogs,category}) {
 					})}
 					
 				</div>
-				<World/>
+			
 			</div>
 			<div>
 				
