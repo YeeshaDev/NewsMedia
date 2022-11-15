@@ -1,39 +1,31 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from '../styles/Home.module.css';
-import { carousels } from '../src/data/db';
-import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
-import Slider from './test';
+import { useEffect,  useState } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import World from '../src/components/World';
 import moment from 'moment';
-import Image from 'next/image';
 
-
-
-const fallback ='assets/images/dashboard/travel.jpg'
 
 export default function Home({blogs,category}) {
 	const[filter,setFilter] = useState(category);
-	const [categories,setCategories] = useState([])
+	//const [categories,setCategories] = useState([])
 
 	
 
-	const uniqueObjects = categories.reduce((a, c) => {
+	const uniqueObjects = filter.reduce((a, c) => {
 		Object.assign(a, {[c.category]: c});
 		return a;
 	  }, {});
 	  
 	  const unique = Object.values(uniqueObjects);
 
-	  useEffect(() => {
+	 /* useEffect(() => {
 		const fetchArticle = async() => {
 			try {
-				const res = await fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=2MAZaIt96zXjNfmyhXAQl0GSN4Key5cc')
-				const article = await res.json()
-				console.log(article.results)
-				setCategories(article.results)
+				const res = await fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=2MAZaIt96zXjNfmyhXAQl0GSN4Key5cc');
+				const article = await res.json();
+				console.log(article.results);
+				setCategories(article.results);
 
 				
 			}catch(error){
@@ -41,7 +33,7 @@ export default function Home({blogs,category}) {
 			}
 		}
 		fetchArticle();
-		},[])
+		},[])*/
 	
 
 	  
@@ -130,7 +122,7 @@ export default function Home({blogs,category}) {
 				>
 				
         
-			{blogs.slice(0,4).map((item,index) => {
+			{blogs.slice(0,4).map((item) => {
 				return (
 					<div key={item.id}  className='position-relative'>
 								<img src={item.urlToImage  || 'assets/images/dashboard/news.jpg'} 
@@ -196,7 +188,7 @@ export default function Home({blogs,category}) {
 					</div>
 				</div>
 				<div className="row">
-					{unique.slice(0,6).map((item,index) => {
+					{unique.slice(0,6).map((item) => {
 						
 						//console.log();
 						return (
@@ -321,7 +313,7 @@ export default function Home({blogs,category}) {
 				<div className="row">
 					{blogs.slice(0,1).map((item)=> {
 						return (
-							<div className="col-lg-6 mb-5 mb-sm-2">
+							<div className="col-lg-6 mb-5 mb-sm-2" key={item.id}>
 							<div className="position-relative image-hover">
 								<img
 									src="assets/images/dashboard/glob.jpg"
@@ -343,7 +335,7 @@ export default function Home({blogs,category}) {
 					
 					<div className="col-lg-6 mb-5 mb-sm-2">
 						<div className="row">
-						{unique.slice(0,4).map((item,id) => {
+						{unique.slice(0,4).map((item) => {
 						//console.log(item?.category);
 						return (
 							
@@ -454,7 +446,7 @@ export default function Home({blogs,category}) {
 				<div className="row">
 					<div className="col-lg-9">
 						<div className="row">
-						{unique.slice(0,6).map((item,id) => {
+						{unique.slice(0,6).map((item) => {
 						//console.log(item?.category);
 						return (
 							
@@ -584,9 +576,9 @@ export default function Home({blogs,category}) {
 							{blogs.slice(0,5).map((data) => {
 								
 								return (
-									<div className="col-sm-12">
+									<div className="col-sm-12" key={data.id}>
 								<div className="border-bottom pb-3">
-									<a href={data.url} target='_blank' className='  text-dark '>
+									<a href={data.url} target='_blank' rel="noreferrer"  className='  text-dark '>
 										<h5 className="font-weight-600 mt-0 mb-0 fs-15">
 										{data.title}
 									</h5></a>

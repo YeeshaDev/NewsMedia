@@ -21,7 +21,7 @@ function World() {
     return (
         <div className="">
 						<div className="row">
-						{world.slice(0,4).map((item,id) => {
+						{world.slice(0,4).map((item) => {
 						//console.log(item?.category);
 						return (
 							
