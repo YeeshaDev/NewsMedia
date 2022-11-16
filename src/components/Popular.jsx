@@ -1,8 +1,7 @@
 import React,{useState,useEffect} from 'react'
 
-function World() {
+function Popular() {
     const[world,setWorld] = useState([])
-	
     useEffect(() => {
 		const fetchWorld = async() => {
 			try {
@@ -30,12 +29,12 @@ function World() {
 
     return (
         <div className="row">
-					{unique.slice(0,9).map((item) => {
+					{unique.slice(10,-1).map((item) => {
 						
 						//console.log();
 						return (
 							
-                             <div  className="col-lg-4 col-sm-6 grid-margin mb-5 mb-sm-2" key={item.url}>
+                             <div  className="col-sm-6 mb-5 mb-sm-2" key={item.url}>
 						<div className="position-relative image-hover">
 							<img
 								 src={item.multimedia[1].url}
@@ -46,6 +45,7 @@ function World() {
 
 							<span className="thumb-title">{item.section.toUpperCase()}</span>
 						</div>
+                        <a href={item.url} className='text-dark'>
 						<h5 className="font-weight-bold mt-3">
 						
 							{item.title}
@@ -54,8 +54,7 @@ function World() {
 						{truncate(item.abstract)}
 						</p>
 						
-						<a href={item.url} className="font-weight-bold text-dark pt-2 mb-5">
-							Read Article
+						
 						</a>
 			
 					</div>
@@ -66,4 +65,4 @@ function World() {
     )
 }
 
-export default World
+export default Popular;

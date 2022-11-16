@@ -1,12 +1,12 @@
 import React,{useState,useEffect} from 'react'
 
-function World() {
+function Technology() {
     const[world,setWorld] = useState([])
 	
     useEffect(() => {
 		const fetchWorld = async() => {
 			try {
-				const res = await fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=2MAZaIt96zXjNfmyhXAQl0GSN4Key5cc')
+				const res = await fetch('https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=2MAZaIt96zXjNfmyhXAQl0GSN4Key5cc')
 				const article = await res.json()
 				//console.log(article.results)
 				setWorld(article.results)
@@ -20,19 +20,13 @@ function World() {
 		},[])
 
 		
-        //This is filters out data  with the same sections and returns a new properties with unique sections
-  const unique = world.filter((value,index,self) => self.map(category => category.section).indexOf(value.section) === index)
-		//console.log(unique)
-
 		//This truncates/reduces the length of a text
 		const truncate = (input) =>
-      input?.length > 100 ? `${input.substring(0, 50)}...` : input;
+      input?.length > 100 ? `${input.substring(0, 70)}...` : input;
 
     return (
         <div className="row">
-					{unique.slice(0,9).map((item) => {
-						
-						//console.log();
+					{world.slice(0,6).map((item) => {
 						return (
 							
                              <div  className="col-lg-4 col-sm-6 grid-margin mb-5 mb-sm-2" key={item.url}>
@@ -46,6 +40,7 @@ function World() {
 
 							<span className="thumb-title">{item.section.toUpperCase()}</span>
 						</div>
+                        <a href={item.url} className="text-dark">
 						<h5 className="font-weight-bold mt-3">
 						
 							{item.title}
@@ -53,9 +48,7 @@ function World() {
 						<p className="fs-15 font-weight-normal mt-2" >
 						{truncate(item.abstract)}
 						</p>
-						
-						<a href={item.url} className="font-weight-bold text-dark pt-2 mb-5">
-							Read Article
+							
 						</a>
 			
 					</div>
@@ -66,4 +59,4 @@ function World() {
     )
 }
 
-export default World
+export default Technology
