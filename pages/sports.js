@@ -20,8 +20,8 @@ const sport = ({sport}) => {
 					<div className="text-center">
 						<h1 className="text-center mt-5">Sports</h1>
 						<p className="text-secondary fs-15">
-							This text can be added in the category Description field in
-							dashboard
+						This page contains all your latest sports and 
+						important information happening in sport world
 						</p>
 					</div>
 					<h5 className="text-muted font-weight-medium mb-3">World News</h5>

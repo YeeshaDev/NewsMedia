@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Footer from './Footer';
 import Navbar from './Navbar';
-import Slider from '../../pages/test';
+
 
 
 
