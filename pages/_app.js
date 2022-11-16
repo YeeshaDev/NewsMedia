@@ -13,14 +13,14 @@ import Meta from '../src/components/Meta';
 function MyApp({ Component, pageProps }) {
 	
 	return (
-		<>
+		< div className='container'>
 			<Meta />
 			
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
 			
-		</>
+		</div>
 	);
 }
 
