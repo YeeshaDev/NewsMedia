@@ -35,7 +35,7 @@ function Search() {
 					<div className="text-center"></div>
             <div>
                 <SearchForm inputText ={(text) => setQuery(text)}/>
-                <h1 className='text-center my-4'>Showing results for {query}</h1>
+                <h1 className='text-center my-4 text-nowrap'>Showing results for {query}</h1>
                 
             </div>
             </div>

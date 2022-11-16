@@ -1,6 +1,8 @@
 body {
 	background-color: #fff !important;
+	overflow-x: hidden;
 }
+
 .center {
 	display: flex;
 	justify-content: center;
@@ -47,7 +49,7 @@ form{
 form i{
 	position: absolute;
 	top: 30%;
-	left: 65%;
+	left: 62%;
 	font-size: 2rem;
 }
 .spinner-3 {
@@ -69,13 +71,18 @@ form i{
   @keyframes s3 {to{transform: rotate(1turn)}}
   
   @media screen and (max-width:750px) {
+	body {
+		display: flex;
+		align-items: center;
+		background-color: #fff !important;
+	}
 	.sport-img {
 		height: 100px;
 	}
 	.search-bar {
 		position: relative;
 		display: flex;
-		width: 100%;
+		width: 90%;
 		height: 50px;
 		margin:1rem auto;
 		border:1px solid rgb(119, 116, 116);
@@ -84,8 +91,9 @@ form i{
 	form i{
 		position: absolute;
 		top: 30%;
-		left: 78%;
+		left: 85%;
 		font-size: 2rem;
+	
 	
 	}
 
