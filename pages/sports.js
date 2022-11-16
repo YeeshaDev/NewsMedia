@@ -33,7 +33,7 @@ const sport = ({sport}) => {
 						<div className="col-lg-6  mb-5 mb-sm-2" key={data.id}>
 					<div className="position-relative image-hover">
 						<img
-							src={data.urlToImage || "../assets/images/sports/Sports_1.jpg"}
+							src={data.urlToImage || '../assets/images/sports/Sports_1.jpg'}
 							className="img-fluid"
 							alt="world-news"
 						/>
@@ -63,11 +63,11 @@ const sport = ({sport}) => {
 			<div className="row mb-4">
 				{sport.map((item) => {
 					return (
-						<div className="col-sm-4 col-sm-lg-3  mb-5 mb-sm-2">
+						<div className="col-sm-4 col-sm-lg-3  mb-5 mb-sm-2" key={item.id}>
 					<div className="position-relative image-hover">
 						<a href={item.url}>
 						<img
-							src={item.urlToImage || "../assets/images/sports/Sports_6.jpg"}
+							src={item.urlToImage || '../assets/images/sports/Sports_6.jpg'}
 							className="img-fluid w-100"
 							alt="world-news"
 							style={{height:150 + 'px',objectFit:'cover'}}

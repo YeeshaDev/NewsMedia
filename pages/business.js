@@ -29,7 +29,7 @@ const business = ({business}) => {
 			<div className="row">
 				{business.slice(0,6).map((item) => {
 					return (
-						<div className="col-lg-6  mb-5 mb-sm-2">
+						<div className="col-lg-6  mb-5 mb-sm-2" key={item.id}>
 					<div className="position-relative image-hover">
 						<a href={item.url}>
 						<img
@@ -151,7 +151,7 @@ const business = ({business}) => {
 			<div className="row mb-4">
 				{business.map((item) => {
 					return (
-						<div className="col-sm-4 col-lg-3 mb-5 mb-sm-2">
+						<div className="col-sm-4 col-lg-3 mb-5 mb-sm-2" key={item.id}>
 					<div className="position-relative image-hover">
 					<a href={item.url} className='text-dark'>
 						<img

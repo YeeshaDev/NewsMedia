@@ -33,7 +33,7 @@ const Magazine = ({magazine}) => {
 						<div className="col-lg-6  mb-5 mb-sm-2" key={data.id}>
 					<div className="position-relative image-hover">
 						<img
-							src={data.urlToImage || "../assets/images/sports/Sports_1.jpg"}
+							src={data.urlToImage || '../assets/images/sports/Sports_1.jpg'}
 							className="img-fluid"
 							alt="world-news"
 						/>
@@ -64,11 +64,11 @@ const Magazine = ({magazine}) => {
 			<div className="row mb-4">
 				{magazine.map((item) => {
 					return (
-						<div className="col-sm-6 col-lg-3 mb-5 mb-sm-2">
+						<div className="col-sm-6 col-lg-3 mb-5 mb-sm-2" key={item.id}>
 					<div className="position-relative image-hover">
 						<a href={item.url}>
 						<img
-							src={item.urlToImage || "../assets/images/sports/Sports_6.jpg"}
+							src={item.urlToImage || '../assets/images/sports/Sports_6.jpg'}
 							className="img-fluid w-100"
 							alt="world-news"
 							style={{objectFit:'cover'}}

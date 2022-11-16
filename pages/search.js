@@ -1,9 +1,9 @@
-import React,{useEffect, useState,CSSProperties} from 'react'
+import React,{useEffect, useState} from 'react'
 import SearchForm from '../src/components/SearchForm'
-import CircleLoader from "react-spinners/ClipLoader";
 
 
-function search() {
+
+function Search() {
     const[loading,setLoading] = useState(true)
     const[articles,setArticles]= useState([])
     const [query,setQuery] = useState('everything')
@@ -55,7 +55,7 @@ function search() {
                          } alt="news-img" 
                          
                          style={{height:300 + 'px',width:500 + 'px',objectFit:'cover'}}/>
-                         <a href={web_url} target='_blank' className='text-dark'>
+                         <a href={web_url} target='_blank'  rel="noreferrer"  className='text-dark'>
                              <h1 className=' mt-4' style={{fontSize:1.5 + 'rem'}}> {data.headline.main}</h1></a>
                        <h4 className='fs-15 mt-2 mb-2'>{data.byline.original}</h4>
                        <p>{truncate(snippet)}</p>
@@ -75,7 +75,7 @@ function search() {
     )
 }
 
-export default search
+export default Search
 
 /*export const getStaticProps = async () => {
     const res = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=ktzijEep1Bft2q1mhqevmATnyOvH39Jr`)
